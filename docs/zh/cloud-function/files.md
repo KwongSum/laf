@@ -78,7 +78,7 @@ export default async function (ctx: FunctionContext) {
   const file = ctx.files[0]
   const stream = createReadStream(file.path)
 
-  const bucket = cloud.storage.bucket('test')
+  const bucket = cloud.storage.bucket('data')
   const res = await bucket.writeFile(file.originalname, stream, {
     ContentType: file.mimetype
   })
